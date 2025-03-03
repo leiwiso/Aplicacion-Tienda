@@ -1,0 +1,7 @@
+{
+  "name": "StoreApi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

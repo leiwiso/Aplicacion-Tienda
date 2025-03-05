@@ -1,0 +1,9 @@
+<ion-item class="styled-item">
+  <ion-icon slot="start" name="list-outline" class="item-icon"></ion-icon>
+  <ion-label>Categoría</ion-label>
+  <ion-select interface="popover" [(ngModel)]="categoriaSelec" (ionChange)="selectCategoria($event.detail.value)">
+    <ion-select-option *ngFor="let categoria of categorias" [value]="categoria">
+      {{ categoria | titlecase }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>

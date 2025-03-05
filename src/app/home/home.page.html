@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header *ngIf="!logo" [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      My Store
     </ion-title>
+      <ion-button [routerLink]="['/carro']" slot="end">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+        <ion-badge *ngIf="countCart > 0" color="danger"> {{ countCart }}</ion-badge>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div *ngIf="logo" class="splash-screen">
+    <img src="/assets/Carrito/carrito.gif">
+  </div>
+
+  <div *ngIf="!logo">
+    <app-asc (ascSelect)="ascOdenar = $event"></app-asc>
+    <app-categoria (categorySelected)="categoriaSelect = $event"></app-categoria>
+    <app-productos [categoriaSelect]="categoriaSelect" [ascDesc]="ascOdenar"></app-productos>
   </div>
 </ion-content>

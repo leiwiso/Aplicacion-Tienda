@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carro de Compras</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="carroItems.length > 0; else emptyCart">
+  <app-cart *ngFor="let item of carroItems" [item]="item" (remove)="removeCarro(item)"></app-cart>
+  <ion-button expand="full" color="success" (click)="check()">Finalizar Compra</ion-button>
+
+  <ion-card>
+    <ion-card-content>
+      <h2>Total: {{ precioTotal | currency: 'USD' }}</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ng-template #emptyCart>
+  <div class="empty-cart-container">
+    <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+    <p class="empty-text">Tu carrito está vacío</p>
+    <ion-button expand="full" color="primary" routerLink="/home">Ver productos</ion-button>
+  </div>
+</ng-template>

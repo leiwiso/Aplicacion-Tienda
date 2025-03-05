@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Resumen de Compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="compras">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Factura</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <h3>📌 Datos del Cliente</h3>
+      <p><strong>Nombre:</strong> {{ compras.cus.name }}</p>
+      <p><strong>Correo:</strong> {{ compras.cus.correo }}</p>
+
+      <h3>💳 Datos de la Tarjeta</h3>
+      <p><strong>Número de Tarjeta:</strong> **** **** **** {{ compras.cus.carNumero.slice(-4) }}</p>
+      <p><strong>Expiración:</strong> {{ compras.cus.DiaExpir }}</p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="success" (click)="irHome()">Ir a Home</ion-button>
+</ion-content>

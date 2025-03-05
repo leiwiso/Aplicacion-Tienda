@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Checkout</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/carro"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="checkP" (ngSubmit)="procesoPago()">
+    <ion-item>
+      <ion-label position="floating">Nombre Completo</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input formControlName="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de Tarjeta</ion-label>
+      <ion-input type="text" formControlName="carNumero" maxlength="16"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de Expiración</ion-label>
+      <ion-input type="text" formControlName="DiaExpir" placeholder="MM/YY"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CVV</ion-label>
+      <ion-input type="password" formControlName="cvv" maxlength="3"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="success" [disabled]="checkP.invalid">Pagar</ion-button>
+  </form>
+</ion-content>

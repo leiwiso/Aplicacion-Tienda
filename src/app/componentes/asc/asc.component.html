@@ -1,0 +1,8 @@
+<ion-item class="styled-item">
+  <ion-icon slot="start" name="funnel-outline" class="item-icon"></ion-icon>
+  <ion-label>Ordenar por:</ion-label>
+  <ion-select interface="popover" [(ngModel)]="selecAsc" (ionChange)="selecAscDes($event.detail.value)">
+    <ion-select-option value="asc">A al Z</ion-select-option>
+    <ion-select-option value="desc">Z al A</ion-select-option>
+  </ion-select>
+</ion-item>

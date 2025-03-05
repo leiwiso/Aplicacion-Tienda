@@ -23,7 +23,7 @@ Ionic Framework (Angular + TypeScript)
 📦 Instalación y Uso
 
 Clonar el repositorio:
-git clone https://github.com/tu-repositorio.git
+git clone https://github.com/leiwiso/Aplicacion-Tienda.git
 cd nombre-del-proyecto
 
 Instalar dependencias:
